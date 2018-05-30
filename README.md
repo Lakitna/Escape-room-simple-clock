@@ -53,6 +53,15 @@ There's not a lot you need to make this work in an escape room setting:
 * If you get an error stating `ModuleNotFoundError` please run step 5 again. Make sure that the command stats with `pip3` and __not__ `pip`. The latter uses Python 2 and is incompatible.
 * For any other errors feel free to open an issue.
 
+#### About fonts
+
+By default the following open source fonts are used:
+
+- [Fira Mono](https://fonts.google.com/specimen/Fira+Mono) for numbers
+- [Fira Sans](https://fonts.google.com/specimen/Fira+Sans) for text
+
+If you don't want to, or can't, download these fonts you can [change the settings](#changing-the-settings) to use some other font.
+
 
 
 ## Changing the settings
