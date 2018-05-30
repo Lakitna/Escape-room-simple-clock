@@ -7,6 +7,19 @@ A minimal Python based system to provide a countdown and code input for very sim
 
 
 
+# Table of Contents
+
+- [Recommended hardware](#recommended-hardware)
+- [Getting it to work](#getting-it-to-work)
+  - [Troubleshooting](#troubleshooting)
+  - [About fonts](#about-fonts)
+- [Changing the settings](#changing-the-settings)
+  - [Some notes](#some-notes)
+
+
+
+
+
 ## Recommended hardware
 
 There's not a lot you need to make this work in an escape room setting:
