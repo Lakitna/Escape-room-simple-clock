@@ -19,7 +19,7 @@ font_text = ('Fira Sans', 16)  # Font family and size for text
 
 keys = {
     'fullscreen': '<Escape>',
-    'start': '<*>',  # Numpad star or <shift + 8>
+    'start': '*',  # Numpad star or <shift + 8>
     'validateCode': ('<KP_Enter>', '<Return>')  # Numpad enter and regular enter
 }
 

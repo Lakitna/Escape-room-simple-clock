@@ -138,7 +138,7 @@ if __name__ == '__main__':
     gui.key(sett.keys['validateCode'], validate_code_caller)
     gui.key(sett.keys['fullscreen'], gui.toggle_fullscreen)
 
-    logging.info("Press * to start countdown.")
+    logging.info("Press %s to start countdown." % sett.keys['start'])
     # Program main loop
     while True:
         gui.update()
