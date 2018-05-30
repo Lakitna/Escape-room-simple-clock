@@ -14,7 +14,7 @@ import sound
 coloredlogs.DEFAULT_LOG_FORMAT = '%(threadName)-10s | ' + \
                                  '%(levelname)-7s | ' + \
                                  '%(message)s'
-coloredlogs.install(level=logging.DEBUG)
+coloredlogs.install(level=logging.INFO)
 
 
 def gui_set(keyword, code_status=None):
@@ -138,6 +138,7 @@ if __name__ == '__main__':
     gui.key(sett.keys['validateCode'], validate_code_caller)
     gui.key(sett.keys['fullscreen'], gui.toggle_fullscreen)
 
+    logging.info("Press * to start countdown.")
     # Program main loop
     while True:
         gui.update()
