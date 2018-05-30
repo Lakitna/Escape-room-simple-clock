@@ -110,7 +110,7 @@ if __name__ == '__main__':
     # Label for countdown
     countdown_text, countdown_elem = gui.make_label(text=cd(), config={
         **sett.labels,
-        'height': 7,
+        'height': 5,
         'font': sett.font_number
     })
 
