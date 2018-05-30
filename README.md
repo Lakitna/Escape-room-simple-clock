@@ -50,7 +50,8 @@ There's not a lot you need to make this work in an escape room setting:
 
 * If you get an error stating that Tkinter can not be imported, please consult the [Tkinter installation guide](https://tkdocs.com/tutorial/install.html).
 * If you get a Python error please make sure your command starts with `python3` and __not__ `python`. The latter uses Python 2 and is incompatible.
-* If you get an error stating that `simpleaudio` can not be imported please run step 5 again. Make sure that the command stats with `pip3` and __not__ `pip`. The latter uses Python 2 and is incompatible.
+* If you get an error stating `ModuleNotFoundError` please run step 5 again. Make sure that the command stats with `pip3` and __not__ `pip`. The latter uses Python 2 and is incompatible.
+* For any other errors feel free to open an issue.
 
 
 
