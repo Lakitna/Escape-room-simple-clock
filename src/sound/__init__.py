@@ -216,6 +216,6 @@ def wait_done(function=None, kwargs=None):
     if kwargs is None:
         kwargs = {}
 
-    while player.queue.full() or player.playing:
+    while player.queue_length > 0 or player.playing:
         if function is not None:
             function(**kwargs)
