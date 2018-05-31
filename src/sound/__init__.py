@@ -58,7 +58,7 @@ class SoundPlayer(threading.Thread):
                 player_obj = wave_object.play()
                 if duration > 0:  # If custom duration
                     logging.info("Playing sound: '%s' (%.2fs)",
-                                    name, duration)
+                                 name, duration)
                     time.sleep(duration)
                 else:  # If file duration
                     logging.info("Playing sound: '%s'", name)

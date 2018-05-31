@@ -6,6 +6,9 @@ __pycache__/
 # MacOs stuff
 .DS_Store
 
+# IDE
+.vscode
+
 # C extensions
 *.so
 

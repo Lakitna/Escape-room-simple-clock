@@ -8,7 +8,7 @@ countdown_time = 5 * 60 + 5  # Time on the clock in seconds
 code_linger_time = 5  # Time code stays on screen after end in seconds
 correct_code = "80085"  # The correct code
 tries = 3  # Amount of code input attempts allowed
-color_change_on = 5 * 60  # Time in seconds where to start changing the screen color
+color_change_on = 5 * 60  # Time in seconds to start changing the screen color
 
 rocket_count = 15  # Total amount of rockets being launched
 rocket_stagger = 500  # Maximum time between rockets
@@ -20,7 +20,7 @@ font_text = ('Fira Sans', 16)  # Font family and size for text
 keys = {
     'fullscreen': '<Escape>',
     'start': '*',  # Numpad star or <shift + 8>
-    'validateCode': ('<KP_Enter>', '<Return>')  # Numpad enter and regular enter
+    'validateCode': ('<KP_Enter>', '<Return>')  # Numpad- and regular enter
 }
 
 # Text shown on screen in different situations.
@@ -79,7 +79,7 @@ gradient = ['#DD3333', '#D83333', '#D43333', '#CF3333', '#CB3333',
             '#5A3333', '#553333', '#513333', '#4D3333', '#483333',
             '#443333', '#403333', '#3B3333', '#373333', '#333333']
 color_time = {
-	0: base_colors
+    0: base_colors
 }
 # Build the color_time dict based on gradient
 step = color_change_on / len(gradient)
