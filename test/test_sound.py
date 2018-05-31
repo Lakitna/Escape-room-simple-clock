@@ -22,7 +22,7 @@ def test_initialization():
 
     p = "someSubDir"
     sound.player = sound.SoundPlayer(path=p)
-    assert sound.player.sound_filepath.endswith('/someSubDir')
+    assert sound.player.sound_filepath.endswith('/%s' % p)
 
 
 def test_is_thread():
