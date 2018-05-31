@@ -27,7 +27,7 @@ A minimal Python based system to provide a countdown and code input for very sim
 
 There's not a lot you need to make this work in an escape room setting:
 
-* A computer with Python 3, like a Raspberry Pi, Windows pc or a Mac.  
+* A computer with Python 3.5 or higher, like a Raspberry Pi, Windows pc or a Mac.  
   [How do I install Python?](http://docs.python-guide.org/en/latest/starting/installation/)
 * A (wireless) numpad. While this program does support alphanumeric codes using a full keyboard, it was build to be used with only a numpad.  
   [Example](https://i.ebayimg.com/images/g/KRoAAOSwVDZaDLS1/s-l300.jpg)
