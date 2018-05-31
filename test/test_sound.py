@@ -33,7 +33,7 @@ def test_play_sound():
     sound.load("beep")
     sound.queue("beep", .01)
     sound.queue("beep")
-    assert len(sound.player.queue) == 2
+    assert sound.player.queue_length == 2
     sound.wait_done()
 
 
@@ -114,8 +114,8 @@ def test_queue_sound(comment, load, input_, expected):
                 sound.queue(**input_)
     else:
         sound.queue(**input_)
-        queued = sound.player.queue[0]
         assert sound.player.queue_length == 1
+        queued = sound.player.queue.get_nowait()
         assert expected[0] == queued[0]
         assert isinstance(queued[1], sound.sa.WaveObject)
         assert expected[1] == queued[2]

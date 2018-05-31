@@ -5,6 +5,7 @@ import time
 import threading
 import logging
 import simpleaudio as sa
+from queue import Queue
 
 
 class SoundPlayerException(Exception):
@@ -21,7 +22,7 @@ class SoundPlayer(threading.Thread):
         threading.Thread.__init__(self)
         self.name = "Sound-T%s" % self.name.split("-")[-1]
         self.daemon = True
-        self.queue = []
+        self.queue = Queue()
         self.sounds = {}
         self.playing = False
 
@@ -46,37 +47,33 @@ class SoundPlayer(threading.Thread):
         Plays sounds from the queue if available.
         """
         while True:
-            if self.queue_length > 0:
-                item = self.queue.pop(0)
-                name = item[0]
-                wave_object = item[1]
-                duration = item[2]
+            item = self.queue.get(block=True)  # Wait for new item in queue
+            name = item[0]
+            wave_object = item[1]
+            duration = item[2]
 
-                self.playing = True
+            self.playing = True
 
-                try:
-                    player_obj = wave_object.play()
-                    if duration > 0:  # If custom duration
-                        logging.info("Playing sound: '%s' (%.2fs)",
+            try:
+                player_obj = wave_object.play()
+                if duration > 0:  # If custom duration
+                    logging.info("Playing sound: '%s' (%.2fs)",
                                     name, duration)
-                        time.sleep(duration)
-                    else:  # If file duration
-                        logging.info("Playing sound: '%s'", name)
-                        player_obj.wait_done()
-                finally:
-                    self.playing = False
-            else:
-                # Let's not get carried away with system resources
-                time.sleep(.1)
+                    time.sleep(duration)
+                else:  # If file duration
+                    logging.info("Playing sound: '%s'", name)
+                    player_obj.wait_done()
+            finally:
+                self.playing = False
 
     @property
     def queue_length(self):
         """ Get the current length of the queue. """
-        return len(self.queue)
+        return self.queue.qsize()
 
     def queue_clear(self):
         """ Empty the queue """
-        self.queue.clear()
+        self.queue.empty()
 
     def unload(self):
         """ Unload everything """
@@ -193,7 +190,7 @@ def queue(name, duration=0):
         name = split[0]
 
     if is_loaded(name):
-        player.queue.append((name, player.sounds[name], duration))
+        player.queue.put((name, player.sounds[name], duration))
         logging.debug("Queued sound '%s'", name)
         return True
     else:
@@ -219,6 +216,6 @@ def wait_done(function=None, kwargs=None):
     if kwargs is None:
         kwargs = {}
 
-    while player.queue_length > 0 or player.playing:
+    while player.queue.full() or player.playing:
         if function is not None:
             function(**kwargs)
