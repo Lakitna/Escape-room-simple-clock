@@ -14,6 +14,8 @@ cache:
   directories:
       - $HOME/.cache/pip
 install:
+    - apt-get update -qy
+    - apt-get install -y libasound2-dev python3-tk
     - pip install -r requirements.txt
     - pip install -U coveralls flake8 pytest
 language: python
