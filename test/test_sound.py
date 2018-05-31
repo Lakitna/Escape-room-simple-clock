@@ -34,7 +34,7 @@ def test_play_sound():
     sound.queue("beep", .01)
     sound.queue("beep")
     assert len(sound.player.queue) == 2
-    # sound.wait_done()
+    sound.wait_done()
 
 
 load_sound_test_cases = (
