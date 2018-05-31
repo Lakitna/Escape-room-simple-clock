@@ -8,7 +8,7 @@ import sound
 @pytest.yield_fixture(autouse=True)
 def run_around_tests():
     # Code that will run before your test
-    sound.player = sound.SoundPlayer(path="_test")
+    sound.player = sound.SoundPlayer(path="_test", runner="ci")
 
     yield
     # Code that will run after your test

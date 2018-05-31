@@ -17,7 +17,7 @@ class SoundPlayer(threading.Thread):
     """
     Provides audio player in new thread.
     """
-    def __init__(self, path=None):
+    def __init__(self, path=None, runner=None):
         """Create a new thread and start it."""
         threading.Thread.__init__(self)
         self.name = "Sound-T%s" % self.name.split("-")[-1]
@@ -25,6 +25,7 @@ class SoundPlayer(threading.Thread):
         self.queue = Queue()
         self.sounds = {}
         self.playing = False
+        self.runner = runner
 
         self.sound_filepath = os.path.dirname(os.path.realpath(__file__))
         if path is not None:
@@ -55,10 +56,11 @@ class SoundPlayer(threading.Thread):
             self.playing = True
 
             try:
-                player_obj = wave_object.play()
+                if self.runner != "ci":
+                    player_obj = wave_object.play()
                 if duration > 0:  # If custom duration
                     logging.info("Playing sound: '%s' (%.2fs)",
-                                 name, duration)
+                                name, duration)
                     time.sleep(duration)
                 else:  # If file duration
                     logging.info("Playing sound: '%s'", name)
