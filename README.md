@@ -1,4 +1,7 @@
 # Escape room simple clock
+[![Build Status](https://travis-ci.org/Lakitna/Escape-room-simple-clock.svg?branch=master)](https://travis-ci.org/Lakitna/Escape-room-simple-clock)
+[![Coverage Status](https://coveralls.io/repos/github/Lakitna/Escape-room-simple-clock/badge.svg?branch=master)](https://coveralls.io/github/Lakitna/Escape-room-simple-clock?branch=master)
+
 A minimal Python based system to provide a countdown and code input for very simple escape rooms.
 
 ![A screenshot of the program](documentation/screenshot_normal.png)[Screenshot 2](documentation/screenshot_wrong.png) 
