@@ -14,10 +14,8 @@ before_install:
   - sudo apt-get install -y libasound2-dev python3-tk
 install:
   - pip install -r requirements.txt
-  - pip install -U coveralls flake8 pytest pylint
+  - pip install -U coveralls pytest
 language: python
 script:
-  - pylint src
-  - flake8 src
   - coverage run -m pytest
 after_success: coveralls
