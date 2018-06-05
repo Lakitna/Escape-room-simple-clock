@@ -11,7 +11,6 @@ def run_around_tests():
 
     yield
     # Code that will run after your test
-    # os.system("export DISPLAY=:0.0")
 
 
 @pytest.fixture
@@ -23,6 +22,3 @@ def test_init():
     g = module.GUI(fps=10, fullscreen=True)
     assert g.loop_delay == 0.01
     assert g.fullscreen is True
-
-
-# /private/tmp/com.apple.launchd.YaLYyBbubK/org.macosforge.xquartz:0
