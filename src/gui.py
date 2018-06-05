@@ -25,6 +25,12 @@ class GUI:
         self.fullscreen = None
         self.set_fullscreen(fullscreen)
 
+    def __repr__(self):
+        return "<GUI object titled %s | fullscreen %s>" % (
+            self.name,
+            self.fullscreen
+        )
+
     def key(self, sequence=None, func=None, add=None):
         """Bind one or more key sequeces to a function.
 
