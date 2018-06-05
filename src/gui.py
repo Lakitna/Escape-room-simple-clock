@@ -16,14 +16,13 @@ class GUI:
         Returns:
             Doesn't return anything.
         """
-        self.name = name
-        self.fullscreen = None
+        self.name = name or "gui"
         self.loop_delay = round(fps / 1000, 2)
 
-        # window setup
         self.window = tk.Tk()
-        if self.name is not None:
-            self.window.title(self.name)
+        self.window.title(self.name)
+
+        self.fullscreen = None
         self.set_fullscreen(fullscreen)
 
     def key(self, sequence=None, func=None, add=None):
