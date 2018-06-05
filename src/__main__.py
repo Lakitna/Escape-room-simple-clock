@@ -138,7 +138,7 @@ if __name__ == '__main__':
     gui.key(sett.keys['validateCode'], validate_code_caller)
     gui.key(sett.keys['fullscreen'], gui.toggle_fullscreen)
 
-    logging.info("Press %s to start countdown." % sett.keys['start'])
+    logging.info("Press %s to start countdown.", sett.keys['start'])
     # Program main loop
     while True:
         gui.update()
@@ -146,12 +146,7 @@ if __name__ == '__main__':
         if sett.tries != sett.tries_total:  # if there has been a try
             if sett.tries > 0:  # if there are tries left
                 if cd.active:
-                    # TODO: use with gui_set
-                    status_text.set("%s %d %s" % (
-                        sett.text['warn'][0],
-                        sett.tries,
-                        sett.text['warn'][1]
-                    ))
+                    status_text.set(sett.text['warn'] % sett.tries)
             else:
                 gui_set('tampered')
                 launch_rockets()

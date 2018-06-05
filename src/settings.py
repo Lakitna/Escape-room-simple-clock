@@ -38,7 +38,7 @@ text = {
                 " Projectiles for your launching needs. We at CRAP are very " +
                 "proud to be the worlds leading launching software.",
     "default": "Enter code to abort",
-    "warn": ("Interface will lock after", "more attempts")
+    "warn": "Interface will lock after %d more attempts"
 }
 
 base_colors = {
@@ -83,9 +83,9 @@ color_time = {
 }
 # Build the color_time dict based on gradient
 step = color_change_on / len(gradient)
-for i in range(len(gradient)):
+for i, value in enumerate(gradient):
     key = round((i + 1) * step)
-    color_time[key] = {'background': gradient[i]}
+    color_time[key] = {'background': value}
 
 
 tries_total = tries

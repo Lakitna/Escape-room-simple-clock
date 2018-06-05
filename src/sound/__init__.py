@@ -4,8 +4,8 @@ import os
 import time
 import threading
 import logging
-import simpleaudio as sa
 from queue import Queue
+import simpleaudio as sa
 
 
 class SoundPlayerException(Exception):
