@@ -19,7 +19,3 @@ def test_launch_rockets(main):
 
     sound.player.unload()
 
-
-# def test_validate_code(main, cd):
-#     cd.resume()
-    # main.validate_code("0000")
