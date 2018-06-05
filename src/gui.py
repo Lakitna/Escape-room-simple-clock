@@ -151,7 +151,8 @@ class GUI:
             for _ in range(round(delay / self.loop_delay)):
                 execute()
 
-    def _pack(self, elem, pack=None):
+    @staticmethod
+    def _pack(elem, pack=None):
         """ pack() a tkinter.elem """
         if pack is None:
             elem.pack()

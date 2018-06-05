@@ -49,9 +49,6 @@ class Countdown(threading.Thread):
             self._format(self.elapsed)
         )
 
-    def _format(self, sec):
-        return time.strftime("%H:%M:%S", time.gmtime(sec))
-
     def run(self):
         """The body of the thread.
 
@@ -99,3 +96,7 @@ class Countdown(threading.Thread):
             logging.info("Countdown resumed")
             self._started_on = round(time.time()) - self.elapsed
             self.active = True
+
+    @staticmethod
+    def _format(sec):
+        return time.strftime("%H:%M:%S", time.gmtime(sec))
